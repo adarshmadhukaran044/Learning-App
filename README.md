@@ -33,3 +33,6 @@ Modern Login and Registration System — Users can sign in, create accounts, or 
 
 ## Summary
 SkillNest is a complete and visually distinctive e-learning platform developed using HTML, CSS, and JavaScript. It provides users with an engaging learning experience through interactive dashboards, course management systems, responsive layouts, and dynamic functionality. The project demonstrates strong frontend development skills and serves as an excellent portfolio example of how modern educational platforms can be built using core web technologies alone.
+
+
+<img width="1920" height="1080" alt="Screenshot (83)" src="https://github.com/user-attachments/assets/ee0404ae-eb56-4936-b43e-4cc08c3e3855" />
