@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillNest — Learn Smarter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════ GATE ══════════ -->
+<div id="gate">
+  <div class="gate-bg">
+    <div class="gate-orb gate-orb1"></div>
+    <div class="gate-orb gate-orb2"></div>
+    <div class="gate-orb gate-orb3"></div>
+    <div class="gate-grid"></div>
+  </div>
+
+  <div class="gate-panel">
+    <div class="gate-left">
+      <div class="gl-logo">Skill<em>Nest</em></div>
+      <div class="gl-headline">Level up.<br>Ship faster.<br>Get certified.</div>
+      <p class="gl-body">500,000+ learners. 800+ courses. Real skills you can use on Monday.</p>
+      <div class="gl-pills">
+        <span class="gpill">🎓 500K learners</span>
+        <span class="gpill">📚 800+ courses</span>
+        <span class="gpill">🏅 Certificates</span>
+        <span class="gpill">⚡ Weekly drops</span>
+      </div>
+    </div>
+
+    <div class="gate-right">
+      <div class="gr-card">
+        <div class="gr-tabs">
+          <button class="gr-tab active" data-tab="in">Sign In</button>
+          <button class="gr-tab" data-tab="up">Register</button>
+        </div>
+
+        <div class="gr-form" id="form-in">
+          <div class="gr-err" id="gate-err">Invalid credentials — try demo@skillnest.io / demo123</div>
+          <label class="gr-label">Email</label>
+          <input class="gr-input" id="in-email" type="email" placeholder="you@email.com">
+          <label class="gr-label">Password</label>
+          <input class="gr-input" id="in-pass" type="password" placeholder="••••••••">
+          <button class="gr-btn" id="do-login">Sign In →</button>
+          <div class="gr-or">or</div>
+          <button class="gr-ghost" id="do-guest">Continue as Guest</button>
+          <p class="gr-hint">Demo: demo@skillnest.io / demo123</p>
+        </div>
+
+        <div class="gr-form hidden" id="form-up">
+          <label class="gr-label">Full Name</label>
+          <input class="gr-input" id="up-name" type="text" placeholder="Your Name">
+          <label class="gr-label">Email</label>
+          <input class="gr-input" id="up-email" type="email" placeholder="you@email.com">
+          <label class="gr-label">Password</label>
+          <input class="gr-input" id="up-pass" type="password" placeholder="Min 6 characters">
+          <button class="gr-btn" id="do-register">Create Account →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ APP ══════════ -->
+<div id="app" class="hidden">
+  <div class="shell">
+
+    <!-- NAV RAIL -->
+    <nav class="rail">
+      <div class="rail-logo" data-nav="home">SN</div>
+      <div class="rail-items">
+        <button class="rail-btn active" data-nav="home" title="Dashboard">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
+          <span>Home</span>
+        </button>
+        <button class="rail-btn" data-nav="explore" title="Explore">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3" stroke-linecap="round"/></svg>
+          <span>Explore</span>
+        </button>
+        <button class="rail-btn" data-nav="learn" title="My Learning">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          <span>Learn</span>
+        </button>
+        <button class="rail-btn" data-nav="progress" title="Progress">
+          <svg viewBox="0 0 24 24"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+          <span>Stats</span>
+        </button>
+      </div>
+      <div class="rail-bottom">
+        <button class="rail-btn" data-nav="settings" title="Settings">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </button>
+        <div class="rail-avatar" id="railAvatar">RK</div>
+      </div>
+    </nav>
+
+    <!-- CONTENT AREA -->
+    <main class="content">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+        <div class="tb-left">
+          <h1 class="tb-title" id="tb-title">Dashboard</h1>
+        </div>
+        <div class="tb-right">
+          <div class="tb-streak">🔥 <span>14</span></div>
+          <button class="tb-theme" id="tb-theme" title="Toggle theme">◐</button>
+          <button class="tb-logout" id="tb-logout">Sign out</button>
+        </div>
+      </header>
+
+      <!-- ── PAGE: HOME ── -->
+      <section class="page active" id="pg-home">
+        <div class="hero-band">
+          <div class="hb-text">
+            <div class="hb-eyebrow" id="hb-eyebrow">Good morning,</div>
+            <h2 class="hb-name" id="hb-name">Riya Kumar</h2>
+            <p class="hb-desc">You're on a <strong>14-day streak</strong>. 3 more lessons to unlock your UI Design cert.</p>
+            <div class="hb-actions">
+              <button class="btn-primary" data-open="uiux">▶ Resume Learning</button>
+              <button class="btn-ghost" data-nav="explore">Browse Courses</button>
+            </div>
+          </div>
+          <div class="hb-card">
+            <div class="hbc-label">This week</div>
+            <div class="hbc-ring-wrap">
+              <svg class="hbc-ring" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="32" fill="none" stroke="var(--border)" stroke-width="6"/>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="var(--accent)" stroke-width="6"
+                  stroke-dasharray="201" stroke-dashoffset="60"
+                  stroke-linecap="round" transform="rotate(-90 40 40)"/>
+                <text x="40" y="45" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)" font-family="Space Mono">70%</text>
+              </svg>
+              <div class="hbc-xp">
+                <div class="hbc-xp-n">2,450</div>
+                <div class="hbc-xp-l">XP EARNED</div>
+              </div>
+            </div>
+            <div class="hbc-grid">
+              <div class="hbc-stat"><span class="hbs-n">12</span><span class="hbs-l">lessons</span></div>
+              <div class="hbc-stat"><span class="hbs-n">4.2h</span><span class="hbs-l">watched</span></div>
+              <div class="hbc-stat"><span class="hbs-n">3</span><span class="hbs-l">quizzes</span></div>
+              <div class="hbc-stat"><span class="hbs-n">1</span><span class="hbs-l">cert</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><div class="kpi-icon" style="--c:#39ffb0">📚</div><div class="kpi-val">24</div><div class="kpi-lbl">Enrolled</div></div>
+          <div class="kpi"><div class="kpi-icon" style="--c:#ffe94d">🏅</div><div class="kpi-val">6</div><div class="kpi-lbl">Certificates</div></div>
+          <div class="kpi"><div class="kpi-icon" style="--c:#38bdf8">⏱</div><div class="kpi-val">847h</div><div class="kpi-lbl">Learned</div></div>
+          <div class="kpi"><div class="kpi-icon" style="--c:#fb923c">🔥</div><div class="kpi-val">14</div><div class="kpi-lbl">Day Streak</div></div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h3>Continue Learning</h3>
+          </div>
+          <div class="cont-list" id="cont-list"></div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h3>Recommended</h3>
+            <button class="link-btn" data-nav="explore">See all →</button>
+          </div>
+          <div class="card-grid" id="rec-grid"></div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h3>🔥 Trending</h3>
+            <button class="link-btn" data-nav="explore">See all →</button>
+          </div>
+          <div class="card-grid" id="trend-grid"></div>
+        </div>
+      </section>
+
+      <!-- ── PAGE: EXPLORE ── -->
+      <section class="page" id="pg-explore">
+        <div class="exp-topbar">
+          <div class="exp-search-wrap">
+            <svg class="exp-search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3" stroke-linecap="round"/></svg>
+            <input class="exp-search" id="exp-q" type="text" placeholder="Search courses, instructors…">
+          </div>
+          <select class="exp-sort" id="exp-sort">
+            <option value="popular">Most Popular</option>
+            <option value="rating">Top Rated</option>
+            <option value="newest">Newest</option>
+            <option value="price-asc">Price ↑</option>
+            <option value="price-desc">Price ↓</option>
+          </select>
+        </div>
+        <div class="exp-body">
+          <aside class="exp-side">
+            <div class="exp-side-title">Category</div>
+            <div class="cat-list">
+              <button class="cat-btn active" data-cat="all">All</button>
+              <button class="cat-btn" data-cat="design">Design</button>
+              <button class="cat-btn" data-cat="development">Development</button>
+              <button class="cat-btn" data-cat="data">Data</button>
+              <button class="cat-btn" data-cat="marketing">Marketing</button>
+              <button class="cat-btn" data-cat="business">Business</button>
+              <button class="cat-btn" data-cat="finance">Finance</button>
+            </div>
+            <div class="exp-side-title" style="margin-top:1.5rem">Filters</div>
+            <label class="filter-chk"><input type="checkbox" id="f-free"> Free only</label>
+            <div class="exp-side-title" style="margin-top:1rem">Min Rating</div>
+            <label class="filter-radio"><input type="radio" name="f-rating" value="0" checked> Any</label>
+            <label class="filter-radio"><input type="radio" name="f-rating" value="4"> 4.0+</label>
+            <label class="filter-radio"><input type="radio" name="f-rating" value="4.5"> 4.5+</label>
+          </aside>
+          <div class="exp-main">
+            <div class="exp-count" id="exp-count">Showing 20 courses</div>
+            <div class="card-grid" id="exp-grid"></div>
+            <div class="no-results hidden" id="no-results">
+              <div class="noR-ico">🔎</div>
+              <p>No courses found. Try a different search.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── PAGE: LEARN (VIDEO) ── -->
+      <section class="page" id="pg-learn">
+        <div class="learn-layout">
+          <div class="learn-main">
+            <div class="breadcrumb" id="vid-bc">
+              <span id="bc-course">Course</span>
+              <span class="bc-sep">›</span>
+              <span id="bc-section">Section</span>
+            </div>
+            <div class="player-wrap" id="player-wrap">
+              <div class="player-ph" id="player-ph">
+                <div class="ph-play">▶</div>
+                <div class="ph-title" id="ph-title">Lesson Title</div>
+                <div class="ph-dur" id="ph-dur">00:00</div>
+              </div>
+              <div class="player-loader hidden" id="player-loader">
+                <div class="loader-spin"></div>
+              </div>
+              <iframe class="player-frame hidden" id="player-frame" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <div class="vid-info">
+              <div class="vid-info-left">
+                <h2 class="vid-title" id="vid-title">Lesson Title</h2>
+                <div class="vid-meta">
+                  <span id="vid-dur">🕐 00:00</span>
+                  <span id="vid-instructor">👤 Instructor</span>
+                </div>
+              </div>
+              <div class="vid-actions">
+                <button class="va-btn" id="va-prev">← Prev</button>
+                <button class="va-btn accent" id="va-next">Next →</button>
+                <button class="va-btn" onclick="showToast('❤️ Saved to wishlist')">♥</button>
+                <button class="va-btn" onclick="showToast('🔗 Link copied!')">⛓</button>
+              </div>
+            </div>
+            <div class="vid-progress-bar">
+              <div class="vpb-fill" id="vpb-fill"></div>
+            </div>
+            <div class="vid-progress-label" id="vpb-label">0% complete</div>
+
+            <div class="vid-tabs">
+              <button class="vt active" data-panel="vp-desc">Overview</button>
+              <button class="vt" data-panel="vp-notes">Notes</button>
+              <button class="vt" data-panel="vp-resources">Resources</button>
+            </div>
+            <div class="vid-panel active" id="vp-desc">
+              <p id="vp-desc-text" class="vp-body">Course description will appear here.</p>
+            </div>
+            <div class="vid-panel" id="vp-notes">
+              <textarea class="notes-ta" placeholder="Take notes while you learn…&#10;&#10;Tip: Your notes auto-save per lesson."></textarea>
+              <button class="btn-primary small" onclick="showToast('📝 Notes saved!')">Save Notes</button>
+            </div>
+            <div class="vid-panel" id="vp-resources">
+              <div class="res-item" onclick="showToast('📄 Opening…')"><span class="res-icon">📄</span><span>Lesson Slides.pdf</span><span class="res-dl">↓</span></div>
+              <div class="res-item" onclick="showToast('📄 Opening…')"><span class="res-icon">📌</span><span>Quick Reference Cheatsheet.pdf</span><span class="res-dl">↓</span></div>
+              <div class="res-item" onclick="showToast('🔗 Opening…')"><span class="res-icon">🔗</span><span>Official Documentation</span><span class="res-dl">→</span></div>
+            </div>
+          </div>
+
+          <!-- PLAYLIST -->
+          <aside class="playlist">
+            <div class="pl-head">
+              <div class="pl-title" id="pl-title">Course Title</div>
+              <div class="pl-prog" id="pl-prog">0% complete</div>
+              <div class="pl-bar"><div class="pl-bar-fill" id="pl-bar-fill"></div></div>
+            </div>
+            <div class="pl-body" id="pl-body"></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ── PAGE: PROGRESS ── -->
+      <section class="page" id="pg-progress">
+        <div class="prog-hero">
+          <div class="ph-left">
+            <h2 class="ph-title">Your Learning Story</h2>
+            <p class="ph-sub">Member since August 2024</p>
+          </div>
+          <div class="ph-kpis">
+            <div class="ph-kpi"><span class="phk-n">847h</span><span class="phk-l">learned</span></div>
+            <div class="ph-kpi"><span class="phk-n">24</span><span class="phk-l">courses</span></div>
+            <div class="ph-kpi"><span class="phk-n">6</span><span class="phk-l">certs</span></div>
+            <div class="ph-kpi"><span class="phk-n">14</span><span class="phk-l">streak</span></div>
+          </div>
+        </div>
+
+        <div class="prog-content">
+          <h3 class="section-title">Active Courses</h3>
+          <div id="prog-course-list"></div>
+
+          <h3 class="section-title" style="margin-top:2.5rem">Learning Activity</h3>
+          <div class="heatmap-card">
+            <div class="heatmap-legend">
+              <span>Less</span>
+              <div class="hm-swatch s0"></div>
+              <div class="hm-swatch s1"></div>
+              <div class="hm-swatch s2"></div>
+              <div class="hm-swatch s3"></div>
+              <div class="hm-swatch s4"></div>
+              <span>More</span>
+            </div>
+            <div class="heatmap" id="heatmap"></div>
+            <div class="hm-foot">Last 52 weeks</div>
+          </div>
+
+          <h3 class="section-title" style="margin-top:2.5rem">Achievements</h3>
+          <div class="achv-grid" id="achv-grid"></div>
+        </div>
+      </section>
+
+      <!-- ── PAGE: SETTINGS ── -->
+      <section class="page" id="pg-settings">
+        <div class="settings-wrap">
+          <h2 class="settings-title">Account Settings</h2>
+
+          <div class="set-group">
+            <div class="set-group-title">Profile</div>
+            <div class="set-row">
+              <div><div class="set-lbl">Display Name</div><div class="set-sub" id="set-name">Riya Kumar</div></div>
+              <button class="set-btn" onclick="showToast('✏️ Edit profile')">Edit</button>
+            </div>
+            <div class="set-row">
+              <div><div class="set-lbl">Email</div><div class="set-sub" id="set-email">demo@skillnest.io</div></div>
+              <button class="set-btn" onclick="showToast('✏️ Change email')">Change</button>
+            </div>
+            <div class="set-row">
+              <div><div class="set-lbl">Password</div><div class="set-sub">Last changed 3 months ago</div></div>
+              <button class="set-btn" onclick="showToast('🔑 Reset email sent!')">Reset</button>
+            </div>
+          </div>
+
+          <div class="set-group">
+            <div class="set-group-title">Preferences</div>
+            <div class="set-row">
+              <div><div class="set-lbl">Theme</div><div class="set-sub">Dark / Light</div></div>
+              <button class="set-toggle-btn" id="set-theme-btn">Toggle</button>
+            </div>
+            <div class="set-row">
+              <div><div class="set-lbl">Notifications</div><div class="set-sub">Streak reminders & updates</div></div>
+              <button class="set-btn" onclick="showToast('🔔 Saved!')">Configure</button>
+            </div>
+            <div class="set-row">
+              <div><div class="set-lbl">Language</div><div class="set-sub">English (India)</div></div>
+              <button class="set-btn" onclick="showToast('🌐 Coming soon')">Change</button>
+            </div>
+          </div>
+
+          <div class="set-group">
+            <div class="set-group-title">Subscription</div>
+            <div class="set-row">
+              <div><div class="set-lbl">Current Plan</div><div class="set-sub">Free Plan</div></div>
+              <button class="set-upgrade" onclick="showToast('🚀 Upgrade coming soon!')">Upgrade to Pro</button>
+            </div>
+          </div>
+
+          <div class="set-group">
+            <div class="set-group-title">Help & Support</div>
+            <div class="set-row" onclick="showToast('📧 support@skillnest.io')">
+              <div><div class="set-lbl">Email Support</div><div class="set-sub">Reply within 24h</div></div>
+              <button class="set-btn">Contact →</button>
+            </div>
+            <div class="set-row" onclick="showToast('💬 Chat coming soon')">
+              <div><div class="set-lbl">Live Chat</div><div class="set-sub">Mon–Fri, 9am–6pm IST</div></div>
+              <button class="set-btn">Open →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
